@@ -1,0 +1,34 @@
+.cardRegisterLink {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardRegisterLink > h1 {
+    font-family: tittle;
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.cardRegisterLink > input {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: solid black;
+}
+
+.cardRegisterLink > button {
+    margin-top: 30px;
+    width: 180px;
+    height: 35px;
+    background-color: #84b6f4;
+    color: black;
+    font-weight: bold;
+    border: solid #84b6f4;
+    border-radius: 10px;
+}
+
+.cardRegisterLink > button:hover {
+    background-color: #add5fa;
+    border: solid #add5fa;
+}

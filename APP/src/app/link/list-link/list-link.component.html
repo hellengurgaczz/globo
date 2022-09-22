@@ -1,0 +1,6 @@
+<div class="cardListLinks">
+    <h1>Links Monitorados <mat-icon>language</mat-icon></h1>
+    <ul *ngFor="let link of links">
+        <li><a href="{{link.url}}">{{link.url}}</a><mat-icon class="deleteIcon" routerLink="/link/delete/{{link.id}}">delete</mat-icon></li>
+    </ul>
+</div>

@@ -1,0 +1,8 @@
+body {
+    margin: 20px;
+}
+
+@font-face {
+    font-family: tittle;
+    src: url("../assets/coolvetica_rg.otf");
+}
