@@ -18,7 +18,6 @@ export class ScreenshotsListComponent implements OnInit {
     this.linkService.list().subscribe(links => {
       this.links = links;
     });
-
   }
 
 }

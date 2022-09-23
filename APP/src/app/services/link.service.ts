@@ -17,7 +17,7 @@ export class LinkService {
 
 
   list(): Observable<Link[]> {
-    return this.http.get<Link[]>(this.baseUrlLink);
+    return this.http.get<Link[]>(`${this.baseUrlLink}?_sort=date&_order=desc`);
   }
 
   create(link: Link) : Observable<Link> {
