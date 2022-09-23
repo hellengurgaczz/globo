@@ -1,16 +1,18 @@
 const axios = require('axios');
 const puppeteer = require('puppeteer');
-const express = require('express');
-const app = express();
-const http = require('http');
-const { setInterval, setTimeout } = require('timers/promises');
 
+const TIME_WORKER_INTERVAL = 60000;
 const takeScreenshot=  async (url) => {
-   const browser = await puppeteer.launch();
-   const page = await browser.newPage();
-   await page.goto(url);
-   let imgBase64 = await page.screenshot({encoding: "base64"});
-   await browser.close();
+    let imgBase64 = "";
+    try{
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto(url);
+        imgBase64 = await page.screenshot({encoding: "base64"});
+        await browser.close();
+    } catch {
+        imgBase64 = "Não foi possível printar a home desta url."
+    }
    return imgBase64.toString();
 }
 
@@ -21,10 +23,11 @@ async function  worker() {
 
         Object.keys(jobs).map(async e => {
             let img = await takeScreenshot(jobs[e].url);
-            console.log(img)
+            let date = new Date().toLocaleString("pt-br", {timeZone: "America/Sao_Paulo"});
             axios.put(`http://localhost:3001/links/${jobs[e].id_link}`, {
                 url: jobs[e].url,
-                screenshot: img
+                screenshot: img,
+                date: date
             }).then((response) => {
                 if(response.status == 200) {
                     axios.delete(`http://localhost:3001/jobs/${jobs[e].id}`);
@@ -36,6 +39,7 @@ async function  worker() {
     console.log('executado.')
 }
 
-worker()
+setInterval(() => {
+    worker()
+}, TIME_WORKER_INTERVAL);
 
-app.listen(4300)

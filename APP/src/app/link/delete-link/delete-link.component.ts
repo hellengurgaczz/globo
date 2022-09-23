@@ -2,7 +2,6 @@ import { LinkService } from './../../services/link.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Link } from 'src/app/models/link';
-import { Guid } from 'guid-typescript';
 
 @Component({
   selector: 'app-delete-link',
