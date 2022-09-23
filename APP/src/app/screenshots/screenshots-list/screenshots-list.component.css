@@ -1,0 +1,55 @@
+
+
+.pagePrints > h1 {
+    font-family: tittle;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pagePrints {
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.pagePrints > .cardPrints {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pagePrints > .cardPrints  > .print {
+    flex-basis: 25%;
+    position: relative;
+    background-color: #e9e9e9;
+    border-bottom: 2px solid #e9e9e9;
+    border-right: 2px solid #e9e9e9;
+    border-top: 2px solid #e9e9e9;
+    border-left: 2px solid white;
+    margin: 10px;
+    border: solid 2px #808080;
+    transition-duration: 1s;
+}
+
+.print:hover{
+    border-top: 2px solid #b3b3b3;
+    border-left: 2px solid #b3b3b3;
+    border-bottom: 2px solid #b3b3b3;
+    border-right: 2px solid #b3b3b3;
+    box-shadow: rgba(107, 107, 107, 0.4) 5px 5px, rgba(73, 73, 73, 0.3) 10px 10px, rgba(41, 41, 41, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+
+.image {
+    flex: 3;
+}
+
+.info {
+    padding-top: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: tittle;
+}

@@ -1,1 +1,16 @@
-<p>screenshots-list works!</p>
+<div class="pagePrints">
+    <h1>Monitoramento de links cadastrados</h1>
+    <div class="cardPrints">
+      <div class="print" *ngFor="let link of links">
+          <div class="image">
+           
+          </div>
+          <div class="info">
+            <p class="name"> {{link.url}} </p>
+
+          </div>
+
+      </div>
+    </div>
+</div>
+
